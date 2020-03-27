@@ -1,14 +1,17 @@
 # Environment
 for Mac
-LANG:
-  Python 3.7 / Flask
+
+LANG: 
+- Python 3.7 / Flask
+
 DB:
-  Postgres in docker for local
-  Postgres in Google Cloud SQL for staging and production
+- Postgres in docker for local
+- Postgres in Google Cloud SQL for staging and production
+
 Other tools:
-  Docker
-  SQLAlchemy (ORM for Python)
-  Postman
+- Docker
+- SQLAlchemy (ORM for Python)
+- Postman
 
 # For Developlement
 ## setup
