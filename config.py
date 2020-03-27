@@ -15,3 +15,19 @@ if setting == "dev":
           port=port,
           database=db
       )
+
+elif setting == "prod":
+  # Remember - storing secrets in plaintext is potentially unsafe. Consider using
+  # something like https://cloud.google.com/kms/ to help keep secrets secret.
+  db_user = os.environ.get("DB_USER")
+  db_pass = os.environ.get("DB_PASS")
+  db_name = os.environ.get("DB_NAME")
+  cloud_sql_connection_name = os.environ.get("CLOUD_SQL_CONNECTION_NAME")
+
+  SQLALCHEMY_DATABASE_URI = "postgresql+pg8000://{db_user}:{db_password}@/{db_name}?unix_sock=/cloudsql/{cloud_sql_connection_name}/.s.PGSQL.5432".format(
+      db_user=db_user,
+      db_password=db_pass,
+      db_name=db_name,
+      cloud_sql_connection_name=cloud_sql_connection_name
+  )
+  

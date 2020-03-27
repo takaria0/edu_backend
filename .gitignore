@@ -2,5 +2,7 @@
 .git
 __pycache__
 env_dev
+env_local
 *.pyc
 .DS_Store
+api_dev.py
