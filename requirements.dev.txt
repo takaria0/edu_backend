@@ -1,0 +1,8 @@
+flask
+sqlalchemy
+flask-restful
+flask-sqlalchemy
+sqlalchemy_utils
+flask-migrate
+gunicorn
+psycopg2-binary
