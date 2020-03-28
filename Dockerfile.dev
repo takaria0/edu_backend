@@ -25,4 +25,4 @@ EXPOSE 5432
 VOLUME ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
 # ENTRYPOINT [ "/bin/bash", "-c" ]
-CMD ["./wait-for-it.sh", "db_postgres:5432", "--", "python3", "app.py"]
+CMD ["./wait-for-it.sh", "db_postgres:5432", "--", "python3","run.py"]

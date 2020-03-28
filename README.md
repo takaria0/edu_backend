@@ -16,23 +16,14 @@ Other tools:
 # For Developlement
 ## setup
 
-1. install Python3.7 or later
+1. install Python3.7 or later and Docker
 2. clone this repository
-3. create virtual env for python
-```
-python3 -m venv env_dev
-```
-4. install libraries using pip
-```
-pip install -r requirements.dev.txt
-```
-
-## run on local
+3. run docker-compose.dev.yml (flask and postgres)
 run with database (postgres)
-
 ```
 sh run_dev.sh
 ```
+
 
 
 # For Production

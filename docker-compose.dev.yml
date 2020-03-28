@@ -13,6 +13,7 @@ services:
       - "8080:8080"
     environment:
       TZ: Asia/Tokyo
+      FLASK_APP: edu_backend/run.py
       SETTING: "dev"
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password

@@ -15,5 +15,5 @@ RUN pip install -r requirements.prod.txt
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 ENTRYPOINT [ "python3" ]
-CMD ["app.py"]
+CMD ["run.py"]
 
