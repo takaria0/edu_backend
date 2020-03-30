@@ -1,5 +1,6 @@
 import os
-setting = os.environ['SETTING']
+
+setting = os.environ.get('SETTING', "dev")
 
 if setting == "dev":
   user = os.environ['POSTGRES_USER']
@@ -15,6 +16,7 @@ if setting == "dev":
           port=port,
           database=db
       )
+  
 
 elif setting == "prod":
   # Remember - storing secrets in plaintext is potentially unsafe. Consider using

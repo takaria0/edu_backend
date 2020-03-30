@@ -13,7 +13,7 @@ services:
       - "8080:8080"
     environment:
       TZ: Asia/Tokyo
-      FLASK_APP: edu_backend/run.py
+      FLASK_APP: run.py
       SETTING: "dev"
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
@@ -37,7 +37,7 @@ services:
       POSTGRES_PORT: 5432
       POSTGRES_DB: edu_test
     volumes:
-      - db_volume:/var/lib/postgresql/
+      - db_volume:/var/lib/postgresql/data
     # healthcheck:
     #   test: ["CMD-SHELL", "pg_isready -U postgres"]
     #   interval: 1s

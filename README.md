@@ -31,27 +31,28 @@ sh run_dev.sh
 ## How to deploy to Google Cloud Run
 
 1. Upload Docker Image to Container Registory
-Before deploying to Cloud, be sure to run Docker image on local machine to check it behave properly.
+Before deploying to Cloud, be sure to run Docker image on local machine to check it behaves properly.
+  without database
+  ```
+  docker build -t foo .
+  docker run -t foo
+  ```
 
-without database
-```
-docker build -t foo .
-docker run -t foo
+  or with database (postgres)
+
+  ```
+  sh run_dev.sh
+  ```
+
+  Once the contairer runs correctly, push the image to Google Container Storage
+
+  ```
+  gcloud builds submit --tag gcr.io/[project-id]/[container-name]
 ```
 
-or with database (postgres)
+2. Use GUI to deploy to Cloud Run.
 
-```
-sh run_dev.sh
-```
+If you could upload container correctly, the following part has to be easy. 
 
-Once the contairer runs correctly, push the image to Google Container Storage
-
-```
-gcloud builds submit --tag gcr.io/[project-id]/[container-name]
-```
-
-2. Use GUI to deploy to Cloud Run
-if you can upload container correctly, the following part has to be easy.
 
 3. Configure Settings with Cloud SQL. set ENV correctly.
